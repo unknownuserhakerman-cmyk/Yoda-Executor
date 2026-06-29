@@ -106,13 +106,16 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #fff 30%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -129,6 +132,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .btn-primary {
@@ -182,6 +186,221 @@
         .btn-discord:hover {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(88, 101, 242, 0.5);
+        }
+
+        /* ---- YODA EXECUTOR UI MOCKUP ---- */
+        .executor-ui {
+            width: 100%;
+            max-width: 780px;
+            background: #151725;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.08);
+            overflow: hidden;
+            margin-top: 0.5rem;
+            position: relative;
+        }
+
+        /* Title bar */
+        .executor-titlebar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e2036;
+            padding: 10px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .executor-titlebar .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .executor-titlebar .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .executor-titlebar .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .executor-titlebar .dot.red { background: #ff5f57; }
+        .executor-titlebar .dot.yellow { background: #ffbd2e; }
+        .executor-titlebar .dot.green { background: #28c840; }
+
+        .executor-titlebar .title-text {
+            color: #808090;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-left: 6px;
+        }
+
+        .executor-titlebar .title-text span {
+            color: #a855f7;
+        }
+
+        .executor-titlebar .right {
+            display: flex;
+            gap: 12px;
+        }
+
+        .executor-titlebar .right span {
+            color: #606070;
+            font-size: 0.8rem;
+            cursor: default;
+        }
+
+        /* Toolbar */
+        .executor-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 16px;
+            background: #1a1c2e;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            flex-wrap: wrap;
+        }
+
+        .executor-toolbar .tab {
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #808090;
+            cursor: default;
+            background: transparent;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .executor-toolbar .tab.active {
+            background: rgba(168, 85, 247, 0.15);
+            color: #a855f7;
+        }
+
+        .executor-toolbar .tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #d0d0e0;
+        }
+
+        .executor-toolbar .spacer {
+            flex: 1;
+        }
+
+        .executor-toolbar .status {
+            font-size: 0.75rem;
+            color: #28c840;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .executor-toolbar .status .pulse {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #28c840;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Editor area */
+        .executor-editor {
+            padding: 16px;
+            min-height: 220px;
+            position: relative;
+        }
+
+        .executor-editor .line-numbers {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            color: #404050;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            user-select: none;
+        }
+
+        .executor-editor .code-area {
+            margin-left: 32px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: #c0c0d0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .executor-editor .code-area .keyword { color: #c792ea; }
+        .executor-editor .code-area .string { color: #c3e88d; }
+        .executor-editor .code-area .function { color: #82aaff; }
+        .executor-editor .code-area .comment { color: #546e7a; font-style: italic; }
+        .executor-editor .code-area .number { color: #f78c6c; }
+        .executor-editor .code-area .global { color: #ffcb6b; }
+
+        /* Bottom bar */
+        .executor-bottombar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: #1a1c2e;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .executor-bottombar .left-info {
+            display: flex;
+            gap: 16px;
+            font-size: 0.75rem;
+            color: #606070;
+        }
+
+        .executor-bottombar .left-info span em {
+            color: #808090;
+            font-style: normal;
+        }
+
+        .executor-bottombar .right-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .executor-bottombar .btn-execute {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff;
+            padding: 6px 22px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .executor-bottombar .btn-execute:hover {
+            transform: scale(1.03);
+        }
+
+        .executor-bottombar .btn-clear {
+            background: rgba(255, 255, 255, 0.06);
+            color: #808090;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .executor-bottombar .btn-clear:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* ---- COUNTER BAR ---- */
@@ -387,6 +606,165 @@
             align-items: flex-start;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .review-avatar.blue {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+        }
+
+        .review-avatar.green {
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .review-avatar.orange {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+
+        .review-avatar.red {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+        }
+
+        .review-avatar.teal {
+            background: linear-gradient(135deg, #0d9488, #14b8a6);
+        }
+
+        .review-content {
+            flex: 1;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.2rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #d0d0e0;
+        }
+
+        .review-date {
+            font-size: 0.75rem;
+            color: #606070;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .review-text {
+            font-size: 0.85rem;
+            color: #a0a0b0;
+            line-height: 1.5;
+        }
+
+        .review-badge {
+            font-size: 0.65rem;
+            background: rgba(168, 85, 247, 0.15);
+            color: #a855f7;
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .review-badge.pro {
+            background: rgba(88, 101, 242, 0.15);
+            color: #818cf8;
+        }
+
+        /* ---- DOWNLOAD ---- */
+        .download {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .download p {
+            color: #a0a0b0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .download .btn-primary {
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+        }
+
+        .version-info {
+            margin-top: 1.5rem;
+            color: #606070;
+            font-size: 0.85rem;
+        }
+
+        /* ---- DISCORD SECTION ---- */
+        .discord-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(88, 101, 242, 0.03);
+            border-top: 1px solid rgba(88, 101, 242, 0.1);
+            border-bottom: 1px solid rgba(88, 101, 242, 0.1);
+        }
+
+        .discord-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .discord-section p {
+            color: #a0a0b0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 2rem;
+            text-align: center;
+            color: #606070;
+            font-size: 0.9rem;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.btn-download) {
+                display:           border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 12px;
             padding: 1rem 1.2rem;
         }
