@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0b0d1a;
+            background: #16161e;
             color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
@@ -30,7 +30,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(11, 13, 26, 0.85);
+            background: rgba(22, 22, 30, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             z-index: 1000;
@@ -102,7 +102,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: radial-gradient(ellipse at 50% 30%, #1a1040 0%, #0b0d1a 70%);
+            background: radial-gradient(ellipse at 50% 30%, #1e1a2e 0%, #16161e 70%);
         }
 
         .hero-content {
@@ -192,7 +192,7 @@
         .executor-ui {
             width: 100%;
             max-width: 780px;
-            background: #151725;
+            background: #1a1c2a;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.08);
@@ -201,12 +201,11 @@
             position: relative;
         }
 
-        /* Title bar */
         .executor-titlebar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #1e2036;
+            background: #22243a;
             padding: 10px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
@@ -254,13 +253,12 @@
             cursor: default;
         }
 
-        /* Toolbar */
         .executor-toolbar {
             display: flex;
             align-items: center;
             gap: 4px;
             padding: 8px 16px;
-            background: #1a1c2e;
+            background: #1e2030;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             flex-wrap: wrap;
         }
@@ -310,7 +308,6 @@
             50% { opacity: 0.3; }
         }
 
-        /* Editor area */
         .executor-editor {
             padding: 16px;
             min-height: 220px;
@@ -345,13 +342,12 @@
         .executor-editor .code-area .number { color: #f78c6c; }
         .executor-editor .code-area .global { color: #ffcb6b; }
 
-        /* Bottom bar */
         .executor-bottombar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 16px;
-            background: #1a1c2e;
+            background: #1e2030;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
 
@@ -764,4 +760,12 @@
             }
 
             .nav-links a:not(.btn-download) {
-                display:
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-
