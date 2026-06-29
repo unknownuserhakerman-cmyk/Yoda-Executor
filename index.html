@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoda Executor - The Best Roblox Executor</title>
     <style>
-        /* ---- RESET & BASE ---- */
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #16161e;
-            color: #e0e0e0;
+            background: #f4f4f9;
+            color: #1a1a2e;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -25,14 +24,13 @@
             color: inherit;
         }
 
-        /* ---- HEADER / NAV ---- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(22, 22, 30, 0.85);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             z-index: 1000;
             padding: 0 2rem;
         }
@@ -56,9 +54,9 @@
         }
 
         .logo span {
-            color: #fff;
+            color: #1a1a2e;
             background: none;
-            -webkit-text-fill-color: #fff;
+            -webkit-text-fill-color: #1a1a2e;
         }
 
         .nav-links {
@@ -71,12 +69,12 @@
         .nav-links a {
             font-size: 0.95rem;
             font-weight: 500;
-            color: #a0a0b0;
+            color: #555;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #a855f7;
+            color: #7c3aed;
         }
 
         .btn-download {
@@ -94,7 +92,6 @@
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
         }
 
-        /* ---- HERO ---- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -102,7 +99,8 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: radial-gradient(ellipse at 50% 30%, #1e1a2e 0%, #16161e 70%);
+            background: linear-gradient(135deg, #f4f4f9 0%, #e8e0f0 50%, #f4f4f9 100%);
+            padding-top: 90px;
         }
 
         .hero-content {
@@ -116,14 +114,12 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #fff 30%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1a1a2e;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #a0a0b0;
+            color: #666;
             margin-bottom: 2rem;
         }
 
@@ -154,18 +150,18 @@
 
         .btn-secondary {
             background: transparent;
-            color: #a855f7;
+            color: #7c3aed;
             padding: 0.9rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             font-size: 1rem;
-            border: 2px solid #a855f7;
+            border: 2px solid #7c3aed;
             cursor: pointer;
             transition: background 0.3s;
         }
 
         .btn-secondary:hover {
-            background: rgba(168, 85, 247, 0.1);
+            background: rgba(124, 58, 237, 0.08);
         }
 
         .btn-discord {
@@ -188,14 +184,13 @@
             box-shadow: 0 0 30px rgba(88, 101, 242, 0.5);
         }
 
-        /* ---- YODA EXECUTOR UI MOCKUP ---- */
         .executor-ui {
             width: 100%;
             max-width: 780px;
-            background: #1a1c2a;
+            background: #fff;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             margin-top: 0.5rem;
             position: relative;
@@ -205,9 +200,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #22243a;
+            background: #f0f0f5;
             padding: 10px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .executor-titlebar .left {
@@ -232,23 +227,18 @@
         .executor-titlebar .dot.green { background: #28c840; }
 
         .executor-titlebar .title-text {
-            color: #808090;
+            color: #888;
             font-size: 0.85rem;
             font-weight: 500;
             margin-left: 6px;
         }
 
         .executor-titlebar .title-text span {
-            color: #a855f7;
-        }
-
-        .executor-titlebar .right {
-            display: flex;
-            gap: 12px;
+            color: #7c3aed;
         }
 
         .executor-titlebar .right span {
-            color: #606070;
+            color: #999;
             font-size: 0.8rem;
             cursor: default;
         }
@@ -258,8 +248,8 @@
             align-items: center;
             gap: 4px;
             padding: 8px 16px;
-            background: #1e2030;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: #f8f8fc;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
             flex-wrap: wrap;
         }
 
@@ -267,20 +257,20 @@
             padding: 5px 14px;
             border-radius: 6px;
             font-size: 0.8rem;
-            color: #808090;
+            color: #888;
             cursor: default;
             background: transparent;
             transition: background 0.2s, color 0.2s;
         }
 
         .executor-toolbar .tab.active {
-            background: rgba(168, 85, 247, 0.15);
-            color: #a855f7;
+            background: rgba(124, 58, 237, 0.1);
+            color: #7c3aed;
         }
 
         .executor-toolbar .tab:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #d0d0e0;
+            background: rgba(0, 0, 0, 0.03);
+            color: #333;
         }
 
         .executor-toolbar .spacer {
@@ -312,13 +302,14 @@
             padding: 16px;
             min-height: 220px;
             position: relative;
+            background: #fafafa;
         }
 
         .executor-editor .line-numbers {
             position: absolute;
             left: 16px;
             top: 16px;
-            color: #404050;
+            color: #bbb;
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.8rem;
             line-height: 1.7;
@@ -330,42 +321,446 @@
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.8rem;
             line-height: 1.7;
-            color: #c0c0d0;
+            color: #333;
             white-space: pre-wrap;
             word-break: break-all;
         }
 
-        .executor-editor .code-area .keyword { color: #c792ea; }
-        .executor-editor .code-area .string { color: #c3e88d; }
-        .executor-editor .code-area .function { color: #82aaff; }
-        .executor-editor .code-area .comment { color: #546e7a; font-style: italic; }
-        .executor-editor .code-area .number { color: #f78c6c; }
-        .executor-editor .code-area .global { color: #ffcb6b; }
+        .executor-editor .code-area .keyword { color: #7c3aed; font-weight: 600; }
+        .executor-editor .code-area .string { color: #2e7d32; }
+        .executor-editor .code-area .function { color: #1565c0; }
+        .executor-editor .code-area .comment { color: #999; font-style: italic; }
+        .executor-editor .code-area .number { color: #e65100; }
+        .executor-editor .code-area .global { color: #f57f17; }
 
         .executor-bottombar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 16px;
-            background: #1e2030;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            background: #f8f8fc;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .executor-bottombar .left-info {
             display: flex;
             gap: 16px;
             font-size: 0.75rem;
-            color: #606070;
+            color: #999;
         }
 
         .executor-bottombar .left-info span em {
-            color: #808090;
+            color: #666;
             font-style: normal;
         }
 
         .executor-bottombar .right-buttons {
             display: flex;
             gap: 8px;
+        }
+
+        .executor-bottombar .btn-execute {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff;
+            padding: 6px 22px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .executor-bottombar .btn-execute:hover {
+            transform: scale(1.03);
+        }
+
+        .executor-bottombar .btn-clear {
+            background: rgba(0, 0, 0, 0.05);
+            color: #888;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .executor-bottombar .btn-clear:hover {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .counter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .counter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .counter-item .num {
+            color: #7c3aed;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1a1a2e;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #7c3aed;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .pricing {
+            padding: 5rem 2rem;
+            background: #fafafa;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+
+        .pricing-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #7c3aed;
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.08);
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            color: #1a1a2e;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            padding: 0.5rem 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card ul li::before {
+            content: "✓ ";
+            color: #7c3aed;
+            font-weight: 700;
+        }
+
+        .pricing-card .btn-primary,
+        .pricing-card .btn-secondary {
+            width: 100%;
+            margin-top: 0.5rem;
+            justify-content: center;
+            display: block;
+            text-align: center;
+        }
+
+        .reviews {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .review-card {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .review-avatar.blue { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .review-avatar.green { background: linear-gradient(135deg, #059669, #10b981); }
+        .review-avatar.orange { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .review-avatar.red { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .review-avatar.teal { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+
+        .review-content { flex: 1; }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.2rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .review-date {
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .review-text {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .review-badge {
+            font-size: 0.65rem;
+            background: rgba(124, 58, 237, 0.1);
+            color: #7c3aed;
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .review-badge.pro {
+            background: rgba(88, 101, 242, 0.1);
+            color: #5865F2;
+        }
+
+        .download {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .download h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+
+        .download p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .download .btn-primary {
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+        }
+
+        .version-info {
+            margin-top: 1.5rem;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .discord-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(88, 101, 242, 0.03);
+            border-top: 1px solid rgba(88, 101, 242, 0.1);
+            border-bottom: 1px solid rgba(88, 101, 242, 0.1);
+        }
+
+        .discord-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+
+        .discord-section p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.btn-download) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Yoda<span>Executor</span></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#" class="btn-download">Download</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Most Powerful Roblox Executor</h1>
+            <p>Level up your gameplay with the industry's most reliable and feature-rich script exe   gap: 8px;
         }
 
         .executor-bottombar .btn-execute {
